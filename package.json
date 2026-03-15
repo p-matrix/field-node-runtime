@@ -1,0 +1,78 @@
+{
+  "name": "@pmatrix/field-node-runtime",
+  "version": "0.2.0",
+  "description": "P-MATRIX 4.0 Field Node Runtime — State Vector exchange, peer verification, local decision and enforcement for CLI Monitor integration",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "SECURITY.md",
+    "CONTRIBUTING.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest --passWithNoTests",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.5.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.4.0"
+  },
+  "keywords": [
+    "pmatrix",
+    "field",
+    "node-runtime",
+    "4.0",
+    "state-vector",
+    "governance",
+    "agent",
+    "verification"
+  ],
+  "author": "P-MATRIX <architect@p-matrix.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/p-matrix/field-node-runtime/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "homepage": "https://github.com/p-matrix/field-node-runtime#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-matrix/field-node-runtime.git"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.test.ts"
+    ],
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
+    "transform": {
+      "^.+\\.tsx?$": ["ts-jest", { "diagnostics": { "ignoreCodes": [151002] } }]
+    }
+  }
+}
